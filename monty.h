@@ -39,6 +39,26 @@ typedef struct instruction_s
 } instruction_t;
 
 /**
+ * struct instance_s - data instance
+ * @line: the readed line
+ * @args: the arguments
+ * @line_number: line number
+ * @fp: the file
+ * @filename: filename
+ * Description: data instance, line, args
+ */
+typedef struct instance_s
+{
+	char *line;
+	char **args;
+	char *filename;
+	int line_number;
+	FILE *fp;
+} data_t;
+
+extern data_t data;
+
+/**
  * struct global_variable - opcoode and its function
  * @file: the opcode
  * @push_arg: function to handle the opcode
@@ -86,4 +106,5 @@ void free_dlistint(stack_t *head);
 void dobfree(stack_t **stack);
 void dobfree2(stack_t **stack);
 int _isalpha(int c);
-#endif
+
+#endif /*MONTY_H*/
