@@ -1,19 +1,43 @@
-						set up cell blocks 0 | 70 | 100 | 10:
-+++++ +++++				cell 0: initialize counter to 10
-[						set loop
-	> +++++ ++			cell 1: add 7
-	> +++++ +++++		cell 2: add 10
-	> +					cell 3: add 1
-	<<< -				decrease counter to cell 0
-]						end loop
-						print to standard out:
-> ++ .					putchar H (70 plus 2 = 72)
-> +++++ +++++ +.		putchar o (100 plus 11 = 111)
---- .					putchar l (111 minus 3 = 107)
------ ----- .			putchar b (108 minus 10 = 98)
-+++ .					putchar e (98 plus 3 = 101)
-+++++ +++++ +++ .		putchar r (101 plus 13 = 114)
-++ .					putchar t (114 plus 2 = 116)
------ .					putchar o (116 minus 5 = 111)
-- .						putchar n (111 minus 1 = 110)
-> .						putchar \n (10)
+                                                                        Cell c0 = 0
+> ++++ ++++  				                                             Cell c1 = 8
+[        					                                                      Start loop
+< ++++ ++++ +      			                                         Add 9 to c0
+> -      					                                                      Subtract 1 from c1
+]        				                                                      	End loop
+< .        					                                                    Translates the c0 value 72 to "H"!
+> +++						                                                        Cell c1 = 3
+[        					                                                      Start loop
+< ++++ ++++ ++++ +  	                                        	Add 13 to c0
+> -      					                                                      Subtract 1 from c1
+]        					                                                      End loop
+< .							                                                                Translates the c0 value 111 to "o"!
+---							                                                                Substract 3 from c0
+.							                                                                  Translates the c0 value 108 to "l"!
+> ++						                                                      Cell c1 = 2
+[        					                                                    Start loop
+< ---- -  					                                                  Substract 5 to c0
+> -      					                                                    Subtract 1 from c1
+]
+< .							                                                                Translates the c0 value 98 to "b"!
++++						                                                                 	Add 3 to c0
+.							                                                                 Translates the c0 value 101 to "e"!
+> +++						                                                      Cell c1 = 3
+[        					                                                    Start loop
+< ++++						                                                    Add 4 to c0
+> -      					                                                    Subtract 1 from c1
+]
+< +							                                                              Add 1 to c0
+.							                                                                 Translates the c0 value 114 to "r"!
+++							                                                              Add 2 to c0
+.							                                                                Translates the c0 value 116 to "t"!
+---- -						                                                  Substract 5 from c0
+.							                                                                Translates the c0 value 111 to "o"!
+-							                                                                Substract 1 from c0
+.							                                                                Translates the c0 value 110 to "o"!
+> ++++ ++++ ++				                                              Add 10 to c1
+[        					                                                  Start loop
+< ---- ---- ---				                                            Substract 11 from c0
+> -				      		                                                Subtract 1 from c1
+]
+< +++++ +++++				                                                Add 10 to c0
+.							                                                                Translates the c0 value 0 to "\0"!
